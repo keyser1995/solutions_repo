@@ -1,47 +1,90 @@
-# Introduction
+# Investigating the Range as a Function of the Angle of Projection
 
-## Technical setup
+## 1. Theoretical Foundation:
+To derive the equations governing projectile motion, we start from basic principles. We assume that the projectile is launched from the ground (height  y0 = 0), and we ignore air resistance for simplicity.
 
-* Install Visual Studio Code from [here](https://code.visualstudio.com/)
-* Install folowing extensions in Visual Studio Code:
-    * Github Repositories (GitHub, Inc.)
-    * GitHub Copilot (GitHub Copilot)
-    * GitHub Actions (GitHub, Inc.)
-    * Python (Microsoft)
+### Governing Equations of Motion:
 
-## Useful links
+**Horizontal motion**: There is no acceleration in the horizontal direction, so the velocity remains constant. The equation for horizontal motion is:
 
-* [Python](https://www.python.org/)
-* [Miniconda Documentation](https://docs.anaconda.com/miniconda/)
-* [Google Colab](https://colab.research.google.com/)
+<img width="156" alt="image" src="https://github.com/user-attachments/assets/77d246b5-cebd-4aeb-b853-d8c23d55c77d" />
+
+Where:
+
+- x\(t\) is the horizontal distance traveled at time t,
+- v 
+0 is the initial velocity,
+- θ is the launch angle,
+- t is the time.
+
+**Vertical motion**: The vertical motion is influenced by gravity, which gives us the equation:
+
+<img width="184" alt="image" src="https://github.com/user-attachments/assets/4c873ab9-22b1-4531-b764-1fbac661f581" />
 
 
+Where:
 
-## How to use this repository
+- y(t) is the vertical displacement at time t,
+- g is the acceleration due to gravity  (
+≈
+9.81
+ 
+𝑚
+/
+𝑠
+2
+≈9.81m/s 
+2
+ )..
 
-Below are the steps you need to follow:
+### Time of Flight:
+To find the time the projectile remains in the air (i.e., time of flight), we set \( y(t) = 0 \) (when the projectile hits the ground):
 
-1. Create a GitHub account if you don’t have one.
-2. **Fork** this repository to your account.  
-   ![Fork Repository](docs/_pics/fork.png)
-3. Enable the **Issues** tab:
-    - Go to the `Settings` tab and check the **Issues** option.  
-      ![Enable Issues](docs/_pics/issues.png)
-4. Add your professor as a collaborator:
-    - Go to the `Settings` tab and add their GitHub username in the **Collaborators** section.  
-      ![Add Collaborator](docs/_pics/collaborators.png)
-5. Install python: [Download](https://www.python.org/downloads/)
+<img width="159" alt="image" src="https://github.com/user-attachments/assets/8ba13a1c-372e-4949-be83-b9d4ae752675" />
 
-**Source Code & WWW**
 
-- [GitHub repo](https://github.com/dchorazkiewicz/solutions_repo)
-- [WWW](https://dchorazkiewicz.github.io/solutions_repo/)
+This simplifies to:
 
-## Where can I find the problems?
+<img width="102" alt="image" src="https://github.com/user-attachments/assets/3ebacf8e-70d9-41ba-947b-3d4d3c892a35" />
 
-Please visit the [Mathematics Physics Lectures](https://dchorazkiewicz.github.io/Mathematics_Physics_Lectures/) website.
 
-* [Physics](https://dchorazkiewicz.github.io/Mathematics_Physics_Lectures/Physics/Exercises_for_Students/exercises_dch/)
-* [Mathematics](https://dchorazkiewicz.github.io/Mathematics_Physics_Lectures/Mathematics/Exercises/)
-* [Discret Mathematics](https://dchorazkiewicz.github.io/Mathematics_Physics_Lectures/Discrete_Mathematics/Exercises/)
+### Range of the Projectile:
+The range \( R \) is the horizontal distance the projectile travels when it hits the ground. To find this, we substitute the time of flight \( t \) into the horizontal motion equation:
 
+<img width="345" alt="image" src="https://github.com/user-attachments/assets/051e7a7f-5922-4e2e-b1ba-4d051ae8e602" />
+
+
+This is the range formula of the projectile.
+
+## 2. Analysis of the Range:
+
+Now we investigate how the range depends on the launch angle θ.
+
+### Range vs. Angle of Projection:
+The range R is maximized when sin(2θ) is maximized, which occurs when 2θ=90∘ , or 𝜃=45∘. This means that, for a given initial velocity, the range is maximized at a launch angle of 45 degrees.
+
+### Effect of Initial Velocity:
+If the initial velocity \( v_0 \) increases, the range increases quadratically. This means that doubling the initial velocity will quadruple the range.
+
+### Effect of Gravitational Acceleration:
+If g increases (for example, on a planet with stronger gravity), the range decreases. Conversely, if g decreases (on a planet with weaker gravity), the range increases.
+
+## 3. Practical Applications:
+This model can be adapted for more complex real-world scenarios by including factors like:
+
+- **Uneven terrain**: If the projectile is launched from or lands on a raised platform, the equation for y(t) would be modified to account for the initial height.
+  
+- **Air resistance**: For more realistic simulations, we would need to incorporate drag into the equations of motion. This would make the equations more complex and likely require numerical methods to solve.
+
+- **Sports, engineering, and astrophysics**: The model applies to a wide range of fields. In sports, it can describe the trajectory of balls (like soccer or basketball). In engineering, it can be used for the design of launch systems. In astrophysics, it helps understand the motion of celestial objects.
+
+## 4. Limitations of the Idealized Model:
+   
+- **Air resistance:** Our model ignores air resistance, which affects the projectile’s range, especially at higher speeds or for objects with large surface areas. To include air resistance, we would need to solve a more complex system of differential equations, possibly requiring numerical methods (e.g., Euler’s method or Runge-Kutta).
+
+- **Wind: Wind** can alter the trajectory of the projectile. This would require additional modeling of the wind’s velocity and direction.
+
+- **Uneven terrain:** As mentioned earlier, launching from or landing on uneven terrain complicates the equations.
+
+## Conclusion:  
+By following these steps, we derived the equations for projectile motion, explored how the range depends on the angle of projection, and simulated the range for different angles. The idealized model is a good starting point, but real-world factors like air resistance and terrain need to be considered for more accurate predictions.
