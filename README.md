@@ -78,7 +78,30 @@ This model can be adapted for more complex real-world scenarios by including fac
 
 - **Sports, engineering, and astrophysics**: The model applies to a wide range of fields. In sports, it can describe the trajectory of balls (like soccer or basketball). In engineering, it can be used for the design of launch systems. In astrophysics, it helps understand the motion of celestial objects.
 
-## 4. Limitations of the Idealized Model:
+## 4. Python Implementation
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define parameters
+v_0 = 20  # initial velocity in m/s
+g = 9.81  # acceleration due to gravity in m/s^2
+angles = np.linspace(0, 90, 100)  # Launch angles from 0 to 90 degrees
+angles_rad = np.radians(angles)  # Convert angles to radians
+
+# Calculate the range for each angle
+range_values = (v_0**2 * np.sin(2 * angles_rad)) / g
+
+# Plot the range as a function of angle
+plt.plot(angles, range_values)
+plt.title("Range vs Angle of Projection")
+plt.xlabel("Launch Angle (degrees)")
+plt.ylabel("Range (meters)")
+plt.grid(True)
+plt.show()
+```
+
+## 5. Limitations of the Idealized Model:
    
 - **Air resistance:** Our model ignores air resistance, which affects the projectile’s range, especially at higher speeds or for objects with large surface areas. To include air resistance, we would need to solve a more complex system of differential equations, possibly requiring numerical methods (e.g., Euler’s method or Runge-Kutta).
 
@@ -88,3 +111,7 @@ This model can be adapted for more complex real-world scenarios by including fac
 
 ## Conclusion:  
 By following these steps, we derived the equations for projectile motion, explored how the range depends on the angle of projection, and simulated the range for different angles. The idealized model is a good starting point, but real-world factors like air resistance and terrain need to be considered for more accurate predictions.
+
+
+
+
