@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M = 5.972e24     # Mass of Earth (kg)
+pi = np.pi
+
+# Function to calculate orbital period for a given radius
+def orbital_period(radius):
+    return 2 * pi * np.sqrt(radius**3 / (G * M))
+
+# Define a range of orbital radii (in meters)
+radii = np.linspace(1e7, 1e9, 100)  # from 10^7 m to 10^9 m
+
+# Calculate corresponding orbital periods
+periods = orbital_period(radii)
+
+# Plot the relationship between orbital period squared (T^2) and orbital radius cubed (r^3)
+plt.figure(figsize=(8, 6))
+plt.plot(radii**3, periods**2, label="T^2 vs r^3", color='blue')
+plt.xlabel("Orbital Radius Cubed (r^3) [m^3]")
+plt.ylabel("Orbital Period Squared (T^2) [s^2]")
+plt.title("Kepler's Third Law: T^2 vs r^3")
+plt.grid(True)
+plt.legend()
+plt.show()
